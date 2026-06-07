@@ -4,384 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WebsiteLink Studio — Professional Websites</title>
-<style>
-:root {
-  --primary: #059669;
-  --primary-dark: #047857;
-  --primary-light: #d1fae5;
-  --slate-50: #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-  --slate-900: #0f172a;
-  --purple: #7c3aed;
-  --purple-dark: #6d28d9;
-  --blue: #2563eb;
-  --amber: #d97706;
-  --amber-light: #fef3c7;
-  --red: #dc2626;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--slate-900); line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; border: none; font-family: inherit; background: none; }
-img { max-width: 100%; }
-.container { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
-.text-center { text-align: center; }
-.hidden { display: none !important; }
-
-/* Navbar */
-.navbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--slate-100); }
-.navbar .container { height: 4rem; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: .5rem; font-weight: 700; font-size: 1.25rem; letter-spacing: -.025em; }
-.logo svg { width: 1.5rem; height: 1.5rem; color: var(--primary); }
-.logo span:last-child { color: var(--primary); }
-.nav-links { display: none; align-items: center; gap: 2rem; font-size: .875rem; font-weight: 500; color: var(--slate-600); }
-.nav-links a:hover { color: var(--primary); }
-.nav-actions { display: flex; align-items: center; gap: .75rem; }
-
-/* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; font-size: .875rem; transition: all .2s; }
-.btn-primary { background: var(--primary); color: #fff; }
-.btn-primary:hover { background: var(--primary-dark); }
-.btn-lg { padding: .75rem 2rem; font-size: 1rem; height: 3rem; }
-.btn-outline { background: transparent; border: 1px solid var(--slate-300); color: var(--slate-700); }
-.btn-purple { background: var(--purple); color: #fff; font-weight: 700; padding: .75rem 1.5rem; border-radius: .5rem; }
-.btn-purple:hover { background: var(--purple-dark); }
-.btn-block { width: 100%; justify-content: center; }
-
-@media(min-width:768px){ .nav-links { display: flex; } }
-
-/* Sections */
-.section { padding: 5rem 1.5rem; }
-.section-dark { background: var(--slate-900); color: #fff; }
-.section-light { background: var(--slate-50); }
-h2 { font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem; }
-@media(min-width:768px){ h2 { font-size: 2.25rem; } }
-.section-desc { color: var(--slate-600); font-size: 1.125rem; max-width: 42rem; margin: 0 auto 3rem; }
-
-/* Hero */
-.hero { padding: 5rem 1.5rem 8rem; }
-.badge { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1.25rem; border-radius: 9999px; font-size: .875rem; font-weight: 500; color: #047857; background: #f0fdf4; border: 1px solid #bbf7d0; margin-bottom: 1.5rem; }
-.badge svg { width: 1rem; height: 1rem; flex-shrink: 0; color: #059669; }
-h1 { font-size: 2.25rem; font-weight: 800; letter-spacing: -.025em; line-height: 1.2; margin-bottom: 1.5rem; }
-h1 .highlight { color: var(--primary); }
-.subtitle { font-size: 1.125rem; color: var(--slate-600); max-width: 42rem; margin: 0 auto 2.5rem; line-height: 1.75; }
-.hero-btns { display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center; }
-.trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 3rem; font-size: .875rem; color: var(--slate-500); }
-.trust-badges span { display: flex; align-items: center; gap: .375rem; }
-.trust-badges svg { width: 1rem; height: 1rem; color: var(--primary); }
-@media(min-width:640px){ h1 { font-size: 3.5rem; } .hero-btns { flex-direction: row; } }
-
-/* Trust */
-.trust-section { padding: 3rem 1.5rem; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); background: rgba(248,250,252,.5); }
-.trust-label { font-size: .875rem; color: var(--slate-500); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 1.5rem; }
-.trust-brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; opacity: .6; }
-.trust-brands span { font-weight: 700; color: var(--slate-700); font-size: 1.125rem; }
-
-/* Steps */
-.steps-wrap { position: relative; padding-top: 1rem; }
-.steps-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; position: relative; }
-.steps-line { position: absolute; top: 2rem; left: 8%; right: 8%; height: 2px; background: var(--slate-200); z-index: 0; }
-.step-card { position: relative; z-index: 1; text-align: center; }
-.step-icon { width: 4rem; height: 4rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto .75rem; transition: all .3s; }
-.step-icon svg { width: 1.5rem; height: 1.5rem; }
-.step-badge { font-size: .75rem; font-weight: 700; margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .025em; }
-.step-title { font-size: .875rem; font-weight: 700; margin-bottom: .5rem; color: var(--slate-900); }
-.step-desc { font-size: .75rem; color: var(--slate-500); line-height: 1.5; }
-@media(max-width:1024px){ .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } .steps-line { display: none; } }
-@media(max-width:640px){ .steps-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(max-width:480px){ .steps-grid { grid-template-columns: 1fr; } }
-
-.info-card { max-width: 48rem; margin: 3rem auto 0; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 1rem; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
-.info-icon { width: 2.5rem; height: 2.5rem; background: #fef3c7; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.info-icon svg { width: 1.25rem; height: 1.25rem; color: var(--amber); }
-.info-title { font-weight: 700; color: #92400e; margin-bottom: .25rem; }
-.info-desc { color: #b45309; font-size: .875rem; line-height: 1.6; }
-@media(max-width:768px){ .info-card { flex-direction: column; } }
-
-/* Packages */
-.packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-@media(max-width:1024px){ .packages-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(max-width:640px){ .packages-grid { grid-template-columns: 1fr; } }
-.package-card { position: relative; border: 2px solid var(--slate-700); border-radius: 1rem; padding: 2rem; background: rgba(30,41,59,.5); transition: all .3s; cursor: pointer; }
-.package-card:hover { border-color: var(--slate-500); }
-.package-card.popular { border-color: rgba(5,150,105,.5); background: #1e293b; }
-.package-card.popular:hover { border-color: var(--primary); }
-.package-card.selected { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(5,150,105,.2); transform: scale(1.02); }
-.package-badge { position: absolute; top: -1rem; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; font-size: .75rem; font-weight: 700; padding: .375rem 1rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: .025em; white-space: nowrap; }
-.package-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; color: #34d399; }
-.package-header svg { width: 1.25rem; height: 1.25rem; }
-.package-name { font-weight: 700; font-size: 1.125rem; color: #fff; }
-.package-price { font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: .25rem; }
-.package-desc { color: var(--slate-400); font-size: .875rem; margin-bottom: 1.5rem; }
-.package-features { list-style: none; margin-bottom: 1.5rem; }
-.package-features li { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .75rem; color: #cbd5e1; font-size: .875rem; }
-.package-features li svg { width: 1.25rem; height: 1.25rem; color: var(--primary); flex-shrink: 0; margin-top: .125rem; }
-.package-btn { width: 100%; font-weight: 700; height: 3rem; border-radius: .5rem; font-size: .875rem; transition: all .2s; }
-
-.ecommerce-card { border-color: rgba(124,58,237,.5); background: linear-gradient(135deg, #1e293b, #0f172a); }
-.ecommerce-card:hover { border-color: var(--purple); }
-.ecommerce-card .package-badge { background: var(--purple); }
-.ecommerce-card .package-header { color: #a78bfa; }
-.ecommerce-card .package-features li svg { color: #a78bfa; }
-.ecommerce-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-.ecommerce-price { font-size: 3rem; font-weight: 800; color: #fff; margin: .5rem 0; }
-.ecommerce-hosting { color: var(--slate-400); font-size: .875rem; margin-bottom: 1rem; }
-.ecommerce-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--slate-700); }
-.ecommerce-time { display: flex; align-items: center; gap: .5rem; color: var(--slate-400); font-size: .875rem; }
-.ecommerce-time svg { width: 1rem; height: 1rem; }
-@media(max-width:768px){ .ecommerce-inner { grid-template-columns: 1fr; } }
-
-/* Services */
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 64rem; margin: 0 auto; }
-@media(max-width:768px){ .services-grid { grid-template-columns: 1fr; } }
-.service-card { position: relative; border: 2px solid; border-radius: 1rem; padding: 2rem; background: #fff; transition: all .3s; }
-.service-card:hover { transform: translateY(-2px); }
-.service-card.hosting { border-color: rgba(37,99,235,.3); }
-.service-card.hosting:hover { border-color: var(--blue); }
-.service-card.maintenance { border-color: rgba(5,150,105,.3); }
-.service-card.maintenance:hover { border-color: var(--primary); }
-.service-card.hourly { border-color: var(--slate-200); }
-.service-card.hourly:hover { border-color: var(--slate-400); }
-.service-badge { position: absolute; top: -1rem; left: 1.5rem; font-size: .75rem; font-weight: 700; padding: .375rem .75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: .025em; color: #fff; }
-.service-badge.hosting { background: var(--blue); }
-.service-badge.maintenance { background: var(--primary); }
-.service-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
-.service-header svg { width: 1.25rem; height: 1.25rem; }
-.service-name { font-weight: 700; font-size: 1.125rem; }
-.service-price { font-size: 2.25rem; font-weight: 800; }
-.service-period { color: var(--slate-500); }
-.service-desc { color: var(--slate-400); font-size: .875rem; margin-bottom: 1.5rem; }
-.service-features { list-style: none; }
-.service-features li { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .75rem; font-size: .875rem; }
-.service-features li svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; margin-top: .125rem; }
-
-/* Features */
-.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-@media(max-width:768px){ .features-grid { grid-template-columns: 1fr; } }
-.feature-item { display: flex; gap: 1rem; }
-.feature-icon { width: 2rem; height: 2rem; background: var(--primary-light); border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .25rem; }
-.feature-icon svg { width: 1rem; height: 1rem; color: var(--primary); }
-.feature-title { font-weight: 700; font-size: 1rem; }
-.feature-desc { color: var(--slate-600); font-size: .875rem; margin-top: .25rem; }
-
-.guarantee-box { background: #fff; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 20px 60px -15px rgba(0,0,0,.1); border: 1px solid var(--slate-200); }
-.guarantee-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.5rem; }
-.guarantee-icon { width: 2.5rem; height: 2.5rem; background: var(--primary-light); border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
-.guarantee-icon svg { width: 1.25rem; height: 1.25rem; color: var(--primary); }
-.guarantee-row { display: flex; justify-content: space-between; align-items: center; padding: .75rem 0; border-bottom: 1px solid var(--slate-100); }
-.guarantee-label { color: var(--slate-600); font-size: .875rem; }
-.guarantee-badge { padding: .25rem .75rem; border-radius: .375rem; font-size: .75rem; font-weight: 500; color: #047857; background: #ecfdf5; border: 1px solid #a7f3d0; }
-.guarantee-quote { background: var(--primary-light); border-radius: .75rem; padding: 1rem; text-align: center; margin-top: 1rem; }
-.guarantee-quote p { color: #047857; font-weight: 600; font-size: .875rem; }
-
-/* Projects */
-.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 72rem; margin: 0 auto; }
-@media(max-width:640px){ .projects-grid { grid-template-columns: 1fr; } }
-.project-card { background: #fff; border-radius: 1rem; overflow: hidden; border: 1px solid var(--slate-200); transition: all .3s; }
-.project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,.15); }
-.project-image { height: 320px; position: relative; overflow: hidden; }
-.project-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.2) 100%); }
-.project-tag { display: inline-block; padding: .25rem .75rem; border-radius: 9999px; font-size: .75rem; font-weight: 600; background: rgba(255,255,255,.2); color: #fff; backdrop-filter: blur(4px); width: fit-content; margin-bottom: .75rem; }
-.project-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
-.project-desc { font-size: .875rem; color: rgba(255,255,255,.85); line-height: 1.5; margin-bottom: 1rem; }
-.project-links { display: flex; gap: .75rem; flex-wrap: wrap; }
-.project-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem; border-radius: .5rem; font-size: .875rem; font-weight: 600; transition: all .2s; }
-.project-btn-primary { background: #fff; color: var(--slate-900); }
-.project-btn-primary:hover { background: var(--slate-100); }
-.project-btn-outline { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
-.project-btn-outline:hover { background: rgba(255,255,255,.1); }
-.project-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--slate-100); }
-.project-meta { display: flex; justify-content: space-between; align-items: center; font-size: .875rem; color: var(--slate-500); }
-.project-location { display: flex; align-items: center; gap: .375rem; }
-.project-type { background: var(--slate-100); padding: .25rem .75rem; border-radius: .375rem; font-size: .75rem; font-weight: 600; color: var(--slate-600); }
-
-/* FAQ */
-.faq-list { max-width: 48rem; margin: 0 auto; }
-.faq-item { background: #fff; border: 1px solid var(--slate-200); border-radius: .75rem; overflow: hidden; margin-bottom: .75rem; }
-.faq-question { width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; text-align: left; background: none; border: none; font-size: 1rem; font-weight: 600; color: var(--slate-900); transition: background .2s; }
-.faq-question:hover { background: var(--slate-50); }
-.faq-question svg { width: 1.25rem; height: 1.25rem; color: var(--slate-400); flex-shrink: 0; margin-left: 1rem; transition: transform .2s; }
-.faq-question.active svg { color: var(--primary); transform: rotate(180deg); }
-.faq-answer { padding: 0 1.5rem 1.25rem; color: var(--slate-600); font-size: .875rem; line-height: 1.6; display: none; }
-.faq-answer.show { display: block; animation: fadeIn .2s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-
-/* Contact */
-.contact-card { max-width: 36rem; margin: 0 auto; background: #fff; border: 1px solid var(--slate-200); border-radius: 1rem; padding: 2rem; }
-.form-group { margin-bottom: 1.25rem; }
-.form-label { display: block; font-size: .875rem; font-weight: 600; color: var(--slate-700); margin-bottom: .375rem; }
-.form-input { width: 100%; padding: .75rem 1rem; border: 1px solid var(--slate-300); border-radius: .5rem; font-size: .875rem; outline: none; transition: all .2s; }
-.form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(5,150,105,.2); }
-.form-textarea { min-height: 6rem; resize: vertical; }
-.form-footer { display: flex; flex-direction: column; gap: .75rem; margin-top: .75rem; font-size: .75rem; color: var(--slate-500); }
-.form-footer span { display: flex; align-items: center; gap: .375rem; }
-.form-footer svg { width: .875rem; height: .875rem; }
-.success-state { text-align: center; padding: 2rem 0; }
-.success-icon { width: 4rem; height: 4rem; background: var(--primary-light); border-radius: 9999px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
-.success-icon svg { width: 2rem; height: 2rem; color: var(--primary); }
-.success-title { font-size: 1.25rem; font-weight: 700; color: #047857; margin-bottom: .5rem; }
-
-/* Footer */
-.footer { padding: 3rem 1.5rem; border-top: 1px solid var(--slate-100); }
-.footer-content { max-width: 72rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-.footer-links { display: flex; gap: 1.5rem; font-size: .875rem; color: var(--slate-500); }
-.footer-links a:hover { color: var(--slate-700); cursor: pointer; }
-.footer-copy { color: var(--slate-500); font-size: .875rem; }
-@media(min-width:768px){ .footer-content { flex-direction: row; justify-content: space-between; } }
-
-/* Payment Modal */
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 100; display: none; align-items: center; justify-content: center; padding: 1rem; }
-.modal-overlay.show { display: flex; }
-.modal { background: #fff; border-radius: 1rem; max-width: 28rem; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
-.modal-header { padding: 1.5rem; border-bottom: 1px solid var(--slate-100); display: flex; justify-content: space-between; align-items: center; }
-.modal-title { font-size: 1.25rem; font-weight: 700; }
-.modal-close { width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: .5rem; font-size: 1.5rem; color: var(--slate-400); cursor: pointer; transition: all .2s; }
-.modal-close:hover { background: var(--slate-100); color: var(--slate-700); }
-.modal-body { padding: 1.5rem; }
-.modal-price { font-size: 2rem; font-weight: 800; color: var(--slate-900); margin-bottom: .25rem; }
-.modal-desc { color: var(--slate-500); font-size: .875rem; margin-bottom: 1.5rem; }
-.pay-option { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid var(--slate-200); border-radius: .75rem; margin-bottom: .75rem; cursor: pointer; transition: all .2s; }
-.pay-option:hover { border-color: var(--primary); background: var(--slate-50); }
-.pay-option.active { border-color: var(--primary); background: #ecfdf5; }
-.pay-icon { width: 2.5rem; height: 2.5rem; background: var(--slate-100); border-radius: .5rem; display: flex; align-items: center; justify-content: center; }
-.pay-icon svg { width: 1.25rem; height: 1.25rem; }
-.pay-label { font-weight: 600; }
-.pay-desc { font-size: .75rem; color: var(--slate-500); }
-.modal-footer { padding: 1rem 1.5rem 1.5rem; }
-.stripe-badge { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: 1rem; font-size: .75rem; color: var(--slate-400); }
-
-/* Pay Error */
-.pay-error { display: none; background: #fef2f2; border: 1px solid #fecaca; border-radius: .5rem; padding: 1rem; margin-bottom: 1rem; }
-.pay-error.show { display: block; }
-
-/* Mobile Menu */
-.mobile-menu-btn { display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: .5rem; color: var(--slate-600); cursor: pointer; transition: all .2s; }
-.mobile-menu-btn:hover { background: var(--slate-100); color: var(--primary); }
-.mobile-menu-btn svg { width: 1.5rem; height: 1.5rem; }
-.mobile-nav { display: none; position: fixed; top: 4rem; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--slate-100); padding: 1rem 1.5rem; z-index: 49; }
-.mobile-nav.show { display: block; animation: slideDown .2s ease; }
-.mobile-nav a { display: block; padding: .875rem 0; font-size: 1rem; font-weight: 500; color: var(--slate-700); border-bottom: 1px solid var(--slate-100); }
-.mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--primary); }
-@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-@media(max-width:767px){ .nav-actions .btn-primary { display: none; } }
-@media(min-width:768px){ .mobile-menu-btn { display: none; } .mobile-nav { display: none !important; } }
-
-/* ====== BRIEF PAGE ====== */
-.page-section { display: none; padding: 3rem 1.5rem 5rem; max-width: 56rem; margin: 0 auto; }
-.page-section.active { display: block; }
-.page-title { font-size: 2rem; font-weight: 800; margin-bottom: .5rem; }
-.page-subtitle { color: var(--slate-500); margin-bottom: 2rem; }
-.page-back { display: inline-flex; align-items: center; gap: .5rem; color: var(--primary); font-weight: 600; font-size: .875rem; margin-bottom: 1.5rem; cursor: pointer; }
-.page-back:hover { color: var(--primary-dark); }
-.page-back svg { width: 1rem; height: 1rem; }
-
-/* ====== 6-STEP BRIEF WIZARD ====== */
-.wizard-progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; position: relative; max-width: 40rem; margin-left: auto; margin-right: auto; }
-.wizard-progress::before { content: ''; position: absolute; top: 1.25rem; left: 10%; right: 10%; height: 2px; background: var(--slate-200); z-index: 0; }
-.wizard-progress-line { position: absolute; top: 1.25rem; left: 10%; height: 2px; background: var(--primary); z-index: 1; transition: width .4s ease; width: 0%; }
-.wizard-step { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .5rem; cursor: default; }
-.wizard-step-dot { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; border: 2px solid var(--slate-300); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .875rem; color: var(--slate-500); transition: all .3s; }
-.wizard-step.active .wizard-step-dot { border-color: var(--primary); background: var(--primary); color: #fff; }
-.wizard-step.completed .wizard-step-dot { border-color: var(--primary); background: var(--primary); color: #fff; }
-.wizard-step-label { font-size: .75rem; font-weight: 600; color: var(--slate-400); transition: color .3s; }
-.wizard-step.active .wizard-step-label { color: var(--primary); }
-.wizard-step.completed .wizard-step-label { color: var(--primary); }
-@media(max-width:640px){ .wizard-step-label { display: none; } .wizard-progress::before { left: 5%; right: 5%; } }
-
-.wizard-step-content { display: none; animation: fadeIn .3s ease; }
-.wizard-step-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-.wizard-step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; }
-.wizard-step-desc { color: var(--slate-500); font-size: .875rem; margin-bottom: 1.5rem; }
-
-/* Radio cards */
-.radio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
-@media(max-width:640px){ .radio-grid { grid-template-columns: 1fr; } }
-.radio-card { display: flex; align-items: center; gap: .75rem; padding: 1rem; border: 2px solid var(--slate-200); border-radius: .75rem; cursor: pointer; transition: all .2s; background: #fff; }
-.radio-card:hover { border-color: var(--primary); background: #f0fdf4; }
-.radio-card.selected { border-color: var(--primary); background: #ecfdf5; }
-.radio-card input { display: none; }
-.radio-card .radio-circle { width: 1.25rem; height: 1.25rem; border: 2px solid var(--slate-300); border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all .2s; }
-.radio-card.selected .radio-circle { border-color: var(--primary); background: var(--primary); }
-.radio-card .radio-circle::after { content: ''; width: .4rem; height: .4rem; background: #fff; border-radius: 9999px; opacity: 0; transform: scale(0); transition: all .2s; }
-.radio-card.selected .radio-circle::after { opacity: 1; transform: scale(1); }
-.radio-card .radio-text { font-size: .875rem; font-weight: 500; }
-
-/* Checkbox cards */
-.checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
-@media(max-width:640px){ .checkbox-grid { grid-template-columns: 1fr; } }
-.checkbox-card { display: flex; align-items: center; gap: .75rem; padding: .875rem 1rem; border: 2px solid var(--slate-200); border-radius: .75rem; cursor: pointer; transition: all .2s; background: #fff; }
-.checkbox-card:hover { border-color: var(--primary); background: #f0fdf4; }
-.checkbox-card.selected { border-color: var(--primary); background: #ecfdf5; }
-.checkbox-card input { display: none; }
-.checkbox-card .check-box { width: 1.25rem; height: 1.25rem; border: 2px solid var(--slate-300); border-radius: .25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all .2s; }
-.checkbox-card.selected .check-box { border-color: var(--primary); background: var(--primary); }
-.checkbox-card .check-box::after { content: ''; width: .35rem; height: .6rem; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) scale(0); opacity: 0; transition: all .2s; margin-bottom: .1rem; }
-.checkbox-card.selected .check-box::after { opacity: 1; transform: rotate(45deg) scale(1); }
-.checkbox-card .check-text { font-size: .875rem; font-weight: 500; }
-
-/* Wizard buttons */
-.wizard-btns { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--slate-200); }
-.wizard-btn-back { padding: .75rem 1.5rem; font-weight: 600; color: var(--slate-600); background: none; border: 1px solid var(--slate-300); border-radius: .5rem; cursor: pointer; transition: all .2s; font-size: .875rem; }
-.wizard-btn-back:hover { background: var(--slate-100); }
-.wizard-btn-next { padding: .75rem 2rem; font-weight: 700; color: #fff; background: var(--primary); border: none; border-radius: .5rem; cursor: pointer; transition: all .2s; font-size: .875rem; }
-.wizard-btn-next:hover { background: var(--primary-dark); }
-.wizard-btn-submit { padding: .75rem 2rem; font-weight: 700; color: #fff; background: var(--primary); border: none; border-radius: .5rem; cursor: pointer; transition: all .2s; font-size: .875rem; }
-.wizard-btn-submit:hover { background: var(--primary-dark); }
-
-/* Review page */
-.review-list { display: flex; flex-direction: column; gap: 1.25rem; }
-.review-item { background: var(--slate-50); border-radius: .75rem; padding: 1.25rem; }
-.review-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
-.review-item-title { font-weight: 700; font-size: .875rem; color: var(--slate-900); display: flex; align-items: center; gap: .5rem; }
-.review-item-step { font-size: .75rem; color: var(--slate-400); font-weight: 600; }
-.review-item-edit { font-size: .75rem; color: var(--primary); cursor: pointer; font-weight: 600; }
-.review-item-edit:hover { text-decoration: underline; }
-.review-item-content { font-size: .875rem; color: var(--slate-700); line-height: 1.6; }
-.review-empty { color: var(--slate-400); font-style: italic; }
-
-/* Error state */
-.field-error { border-color: #f87171 !important; box-shadow: 0 0 0 3px rgba(248,113,113,.2) !important; }
-.error-msg { color: #dc2626; font-size: .75rem; margin-top: .375rem; display: none; }
-.error-msg.show { display: block; }
-
-/* Brief form grid */
-.brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-@media(max-width:640px){ .brief-grid { grid-template-columns: 1fr; } }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ==================== MAIN SITE ==================== -->
-<div id="mainSite">
-
-<!-- Navbar -->
 <nav class="navbar">
   <div class="container">
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8Z"/><path d="m3.3 7 8.7 5 8.7-5"/></svg>
       <span>WebsiteLink</span><span>Studio</span>
     </a>
     <div class="nav-links">
-      <a href="#how">How It Works</a>
-      <a href="#packages">Packages</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="how.html">How It Works</a>
+      <a href="packages.html">Packages</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="#packages" class="btn btn-primary">See Pricing</a>
+      <a href="packages.html" class="btn btn-primary">See Pricing</a>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -389,28 +31,29 @@ h1 .highlight { color: var(--primary); }
   </div>
 </nav>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#packages" onclick="closeMobileMenu()">Packages</a>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="how.html" onclick="closeMobileMenu()">How It Works</a>
+  <a href="packages.html" onclick="closeMobileMenu()">Packages</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="projects.html" onclick="closeMobileMenu()">Projects</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
 </div>
 
-<!-- Hero -->
-<section class="hero text-center">
-  <div class="container">
+<section style="position: relative; min-height: 85vh; background: url('hero.jpg') center/cover no-repeat; display: flex; align-items: center;">
+  <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.2) 100%);"></div>
+  <div class="container" style="position: relative; z-index: 1; padding: 8rem 1.5rem 6rem;">
     <div class="badge">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <span>Delivery in 1-14 days depending on package</span>
     </div>
-    <h1>Your professional website,<br><span class="highlight">ready when you need it.</span></h1>
-    <p class="subtitle">No endless meetings. Pay half to start, see a preview, pay the rest when you're happy.</p>
-    <div class="hero-btns">
-      <a href="#packages" class="btn btn-primary btn-lg">Choose Your Package</a>
-      <a href="#how" class="btn btn-outline btn-lg">How It Works</a>
+    <div style="max-width: 36rem;">
+      <h1 style="font-size: 3.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; text-align: left; margin-bottom: 0;">
+        <span style="color: var(--slate-900); display: block;">Your professional website,</span>
+        <span style="color: var(--primary); display: block; margin-top: 0.25rem;">ready when you need it.</span>
+      </h1>
+      <p style="font-size: 1.25rem; color: var(--slate-600); margin-top: 1rem; max-width: none;">No endless meetings. Pay half to start, see a preview, pay the rest when you're happy.</p>
+      <a href="packages.html" class="btn btn-primary btn-lg" style="margin-top: 2rem; font-size: 1.125rem; padding: 1rem 2.5rem; height: auto;">Get Started</a>
     </div>
     <div class="trust-badges">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Pay 50% to start</span>
@@ -420,7 +63,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- Trust -->
 <section class="trust-section text-center">
   <div class="container">
     <p class="trust-label">Trusted by businesses like</p>
@@ -430,7 +72,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- How It Works -->
 <section class="section" id="how">
   <div class="container">
     <div class="text-center">
@@ -448,13 +89,13 @@ h1 .highlight { color: var(--primary); }
           <div class="step-title">Choose &amp; Pay 50%</div>
           <div class="step-desc">Select your package and pay 50% upfront. No hidden fees.</div>
         </div>
-        <div class="step-card" style="cursor:pointer" onclick="showPage('brief')">
+        <div class="step-card" style="cursor:pointer" onclick="window.location.href='brief.html'">
           <div class="step-icon" style="background:#f1f5f9;color:#64748b">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
           </div>
           <div class="step-badge" style="color:#64748b">STEP 2</div>
           <div class="step-title">Send Brief</div>
-          <div class="step-desc">Fill our <a href="#" onclick="event.preventDefault(); showPage('brief');" style="color:var(--primary);text-decoration:underline">online questionnaire</a>. Mention your domain or let us help you buy one.</div>
+          <div class="step-desc">Fill our <a href="#" onclick="event.preventDefault(); window.location.href='brief.html';" style="color:var(--primary);text-decoration:underline">online questionnaire</a>. Mention your domain or let us help you buy one.</div>
         </div>
         <div class="step-card">
           <div class="step-icon" style="background:#fef3c7;color:#d97706">
@@ -500,7 +141,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- Packages -->
 <section class="section section-dark" id="packages">
   <div class="container">
     <div class="text-center">
@@ -602,7 +242,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- Services -->
 <section class="section section-light" id="services">
   <div class="container">
     <div class="text-center">
@@ -625,6 +264,9 @@ h1 .highlight { color: var(--primary); }
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue)"><polyline points="20 6 9 17 4 12"/></svg><span>99.9% uptime guarantee</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue)"><polyline points="20 6 9 17 4 12"/></svg><span>From year 2: &euro;200/year</span></li>
         </ul>
+        <div style="margin-top:1.5rem">
+          <a href="contact.html" class="btn btn-primary btn-block" style="font-weight:700">Request Service</a>
+        </div>
       </div>
       <div class="service-card maintenance">
         <div class="service-badge maintenance">Recommended</div>
@@ -640,6 +282,9 @@ h1 .highlight { color: var(--primary); }
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><polyline points="20 6 9 17 4 12"/></svg><span>Priority email support</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><polyline points="20 6 9 17 4 12"/></svg><span>Small content changes</span></li>
         </ul>
+        <div style="margin-top:1.5rem">
+          <a href="contact.html" class="btn btn-primary btn-block" style="font-weight:700">Request Service</a>
+        </div>
       </div>
       <div class="service-card hourly">
         <div class="service-header" style="color:var(--slate-600)">
@@ -654,12 +299,14 @@ h1 .highlight { color: var(--primary); }
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--slate-500)"><polyline points="20 6 9 17 4 12"/></svg><span>Bug fixes</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--slate-500)"><polyline points="20 6 9 17 4 12"/></svg><span>SEO improvements</span></li>
         </ul>
+        <div style="margin-top:1.5rem">
+          <a href="contact.html" class="btn btn-primary btn-block" style="font-weight:700">Request Service</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Features -->
 <section class="section">
   <div class="container">
     <div class="features-grid">
@@ -702,7 +349,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- Projects -->
 <section class="section" id="projects">
   <div class="container">
     <div class="text-center">
@@ -711,7 +357,7 @@ h1 .highlight { color: var(--primary); }
     </div>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/cherie.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('cherie.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag">Photography</span>
             <h3 class="project-title">Cherie Moments</h3>
@@ -735,7 +381,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/dental.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('dental.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#ccfbf1;color:#0f766e">Medical</span>
             <h3 class="project-title">Dental Clinic</h3>
@@ -759,7 +405,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/ansolas.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('ansolas.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#fef3c7;color:#92400e">Fine Dining</span>
             <h3 class="project-title">An Solas</h3>
@@ -783,7 +429,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/yvette.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('yvette.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#fce7f3;color:#be185d">Fashion</span>
             <h3 class="project-title">Yvette Mode</h3>
@@ -807,7 +453,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/graphics.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('graphics.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#dbeafe;color:#1e3a5f">Design Studio</span>
             <h3 class="project-title">Graphics Web Studio</h3>
@@ -831,7 +477,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/mcauto.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('mcauto.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#fed7aa;color:#7c2d12">Automotive</span>
             <h3 class="project-title">MC Auto Solutions</h3>
@@ -855,7 +501,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/stretch.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('stretch.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#fce7f3;color:#be185d">Fitness</span>
             <h3 class="project-title">Stretch Fit Mama</h3>
@@ -879,7 +525,7 @@ h1 .highlight { color: var(--primary); }
         </div>
       </div>
       <div class="project-card">
-        <div class="project-image" style="background-image: url('images/salon.jpg'); background-size: cover; background-position: center top;">
+        <div class="project-image" style="background-image: url('salon.jpg'); background-size: cover; background-position: center top;">
           <div class="project-overlay">
             <span class="project-tag" style="background:#fce7f3;color:#be185d">Beauty Salon</span>
             <h3 class="project-title">The Luxe Salon</h3>
@@ -906,7 +552,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="section section-light" id="faq">
   <div class="container">
     <div class="text-center">
@@ -946,7 +591,6 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- Contact -->
 <section class="section" id="contact">
   <div class="container">
     <div class="text-center">
@@ -973,17 +617,15 @@ h1 .highlight { color: var(--primary); }
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section text-center">
   <div class="container">
     <h2 style="font-size:2.25rem">Ready to get your site <span class="highlight">in 24h?</span></h2>
     <p class="subtitle">Stop delaying. Every day without a professional website is a day you're losing customers.</p>
-    <a href="#packages" class="btn btn-primary btn-lg" style="font-size:1.125rem;padding:.875rem 2.5rem;height:auto">Choose Your Package Now</a>
+    <a href="packages.html" class="btn btn-primary btn-lg" style="font-size:1.125rem;padding:.875rem 2.5rem;height:auto">Choose Your Package Now</a>
     <p style="color:#94a3b8;font-size:.875rem;margin-top:1rem">50% now &bull; 50% after preview approval &bull; Private preview &bull; 2 revision rounds</p>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
     <div style="display:flex;align-items:center;gap:.5rem;font-weight:700">
@@ -992,334 +634,12 @@ h1 .highlight { color: var(--primary); }
     </div>
     <div class="footer-copy">&copy; <span id="year"></span> WebsiteLink Studio. All rights reserved.</div>
     <div class="footer-links">
-      <a onclick="showPage('terms')">Terms &amp; Conditions</a>
-      <a onclick="showPage('refunds')">Refund Policy</a>
-      <a href="#contact" onclick="showHome(); window.location.hash='contact';">Contact</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="refunds.html">Refund Policy</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>
-
-</div><!-- /mainSite -->
-
-<!-- ==================== TERMS PAGE ==================== -->
-<div id="page-terms" class="page-section">
-  <div class="container">
-    <div class="page-back" onclick="showHome()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      Back to Website
-    </div>
-    <h1 class="page-title">Terms &amp; Conditions</h1>
-    <p class="page-subtitle">Add your terms here</p>
-    <div class="page-content">
-      <p style="color:var(--slate-400);font-style:italic">This is a placeholder. Replace this section with your own Terms &amp; Conditions content.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== REFUNDS PAGE ==================== -->
-<div id="page-refunds" class="page-section">
-  <div class="container">
-    <div class="page-back" onclick="showHome()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      Back to Website
-    </div>
-    <h1 class="page-title">Refund Policy</h1>
-    <p class="page-subtitle">Add your refund policy here</p>
-    <div class="page-content">
-      <p style="color:var(--slate-400);font-style:italic">This is a placeholder. Replace this section with your own Refund Policy content.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== BRIEF PAGE (6-STEP WIZARD) ==================== -->
-<div id="page-brief" class="page-section">
-  <div class="container">
-    <div class="page-back" onclick="showHome()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      Back to Website
-    </div>
-    <h1 class="page-title">Project Brief</h1>
-    <p class="page-subtitle">Tell us about your project so we can build exactly what you need. Step by step.</p>
-
-    <div class="contact-card" style="max-width: 52rem;">
-
-      <!-- Progress Bar -->
-      <div class="wizard-progress" id="wizardProgress">
-        <div class="wizard-progress-line" id="progressLine"></div>
-        <div class="wizard-step active" data-step="1"><div class="wizard-step-dot">1</div><span class="wizard-step-label">Business</span></div>
-        <div class="wizard-step" data-step="2"><div class="wizard-step-dot">2</div><span class="wizard-step-label">Goals</span></div>
-        <div class="wizard-step" data-step="3"><div class="wizard-step-dot">3</div><span class="wizard-step-label">Design</span></div>
-        <div class="wizard-step" data-step="4"><div class="wizard-step-dot">4</div><span class="wizard-step-label">Content</span></div>
-        <div class="wizard-step" data-step="5"><div class="wizard-step-dot">5</div><span class="wizard-step-label">Technical</span></div>
-        <div class="wizard-step" data-step="6"><div class="wizard-step-dot">6</div><span class="wizard-step-label">Review</span></div>
-      </div>
-
-      <!-- Form -->
-      <form id="briefForm" onsubmit="event.preventDefault();">
-
-        <!-- STEP 1: BUSINESS INFO -->
-        <div class="wizard-step-content active" id="step-1">
-          <div class="wizard-step-title">About Your Business</div>
-          <div class="wizard-step-desc">Let's start with the basics so we know who you are.</div>
-          <div class="brief-grid">
-            <div class="form-group">
-              <label class="form-label">Your Name *</label>
-              <input type="text" class="form-input" id="w_name" placeholder="John Smith">
-              <div class="error-msg" id="err_name">Please enter your name</div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address *</label>
-              <input type="email" class="form-input" id="w_email" placeholder="john@company.ie">
-              <div class="error-msg" id="err_email">Please enter a valid email</div>
-            </div>
-          </div>
-          <div class="brief-grid">
-            <div class="form-group">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-input" id="w_phone" placeholder="+353 87 123 4567">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Company / Business Name</label>
-              <input type="text" class="form-input" id="w_company" placeholder="Your Business Ltd">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Industry / Sector</label>
-            <input type="text" class="form-input" id="w_industry" placeholder="e.g. Restaurant, Healthcare, Consulting, E-commerce">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tell us about your business *</label>
-            <textarea class="form-input form-textarea" id="w_about" placeholder="What does your business do? Who are your customers? What makes you different?"></textarea>
-            <div class="error-msg" id="err_about">Please describe your business</div>
-          </div>
-          <div class="wizard-btns" style="justify-content:flex-end">
-            <button type="button" class="wizard-btn-next" onclick="nextStep()">Continue</button>
-          </div>
-        </div>
-
-        <!-- STEP 2: WEBSITE GOALS -->
-        <div class="wizard-step-content" id="step-2">
-          <div class="wizard-step-title">Website Goals</div>
-          <div class="wizard-step-desc">What do you want your website to achieve?</div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Primary goal of your website *</label>
-            <div class="radio-grid" id="w_goal_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Showcase services"><span class="radio-circle"></span><span class="radio-text">Showcase services / portfolio</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Generate leads"><span class="radio-circle"></span><span class="radio-text">Generate leads / enquiries</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Sell products"><span class="radio-circle"></span><span class="radio-text">Sell products online</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Build brand awareness"><span class="radio-circle"></span><span class="radio-text">Build brand awareness</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Share information"><span class="radio-circle"></span><span class="radio-text">Share information / blog</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_goal')"><input type="radio" name="w_goal" value="Take bookings"><span class="radio-circle"></span><span class="radio-text">Take bookings / appointments</span></label>
-            </div>
-            <div class="error-msg" id="err_goal">Please select a primary goal</div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">What pages do you need? (select all that apply)</label>
-            <div class="checkbox-grid">
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Home"><span class="check-box"></span><span class="check-text">Home</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="About"><span class="check-box"></span><span class="check-text">About</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Services"><span class="check-box"></span><span class="check-text">Services</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Portfolio / Gallery"><span class="check-box"></span><span class="check-text">Portfolio / Gallery</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Contact"><span class="check-box"></span><span class="check-text">Contact</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Blog"><span class="check-box"></span><span class="check-text">Blog</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Testimonials"><span class="check-box"></span><span class="check-text">Testimonials</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Shop"><span class="check-box"></span><span class="check-text">Shop / Products</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="FAQ"><span class="check-box"></span><span class="check-text">FAQ</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_pages" value="Booking"><span class="check-box"></span><span class="check-text">Booking</span></label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Special features needed (select all that apply)</label>
-            <div class="checkbox-grid">
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Contact form"><span class="check-box"></span><span class="check-text">Contact form</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Live chat / WhatsApp"><span class="check-box"></span><span class="check-text">Live chat / WhatsApp</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Social media links"><span class="check-box"></span><span class="check-text">Social media links</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Google Maps"><span class="check-box"></span><span class="check-text">Google Maps</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Multi-language"><span class="check-box"></span><span class="check-text">Multi-language</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Newsletter signup"><span class="check-box"></span><span class="check-text">Newsletter signup</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Booking system"><span class="check-box"></span><span class="check-text">Booking system</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Online payments"><span class="check-box"></span><span class="check-text">Online payments</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Customer login"><span class="check-box"></span><span class="check-text">Customer login</span></label>
-              <label class="checkbox-card" onclick="toggleCheckbox(this)"><input type="checkbox" name="w_features" value="Photo gallery"><span class="check-box"></span><span class="check-text">Photo gallery</span></label>
-            </div>
-          </div>
-
-          <div class="wizard-btns">
-            <button type="button" class="wizard-btn-back" onclick="prevStep()">Back</button>
-            <button type="button" class="wizard-btn-next" onclick="nextStep()">Continue</button>
-          </div>
-        </div>
-
-        <!-- STEP 3: DESIGN & BRANDING -->
-        <div class="wizard-step-content" id="step-3">
-          <div class="wizard-step-title">Design &amp; Branding</div>
-          <div class="wizard-step-desc">Help us understand your visual identity.</div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Do you have a logo? *</label>
-            <div class="radio-grid" id="w_logo_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_logo')"><input type="radio" name="w_logo" value="Have logo"><span class="radio-circle"></span><span class="radio-text">Yes, I have a logo</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_logo')"><input type="radio" name="w_logo" value="Need logo"><span class="radio-circle"></span><span class="radio-text">No, I need a logo too</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_logo')"><input type="radio" name="w_logo" value="No logo yet"><span class="radio-circle"></span><span class="radio-text">No logo, text name is fine</span></label>
-            </div>
-            <div class="error-msg" id="err_logo">Please select a logo option</div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Brand colours (if you have them)</label>
-            <input type="text" class="form-input" id="w_colours" placeholder="e.g. Navy blue #1B365D, Gold #C9A227, or 'no preference'">
-          </div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Preferred design style *</label>
-            <div class="radio-grid" id="w_style_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Clean & Minimal"><span class="radio-circle"></span><span class="radio-text">Clean &amp; Minimal</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Bold & Modern"><span class="radio-circle"></span><span class="radio-text">Bold &amp; Modern</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Warm & Friendly"><span class="radio-circle"></span><span class="radio-text">Warm &amp; Friendly</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Luxury & Elegant"><span class="radio-circle"></span><span class="radio-text">Luxury &amp; Elegant</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Corporate & Professional"><span class="radio-circle"></span><span class="radio-text">Corporate &amp; Professional</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_style')"><input type="radio" name="w_style" value="Creative & Unique"><span class="radio-circle"></span><span class="radio-text">Creative &amp; Unique</span></label>
-            </div>
-            <div class="error-msg" id="err_style">Please select a design style</div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Reference websites you like</label>
-            <textarea class="form-input form-textarea" id="w_references" placeholder="Paste URLs of websites whose design you admire and tell us what you like about them"></textarea>
-          </div>
-
-          <div class="wizard-btns">
-            <button type="button" class="wizard-btn-back" onclick="prevStep()">Back</button>
-            <button type="button" class="wizard-btn-next" onclick="nextStep()">Continue</button>
-          </div>
-        </div>
-
-        <!-- STEP 4: CONTENT -->
-        <div class="wizard-step-content" id="step-4">
-          <div class="wizard-step-title">Content</div>
-          <div class="wizard-step-desc">What content do you have ready for the website?</div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Do you have text copy ready? *</label>
-            <div class="radio-grid" id="w_copy_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_copy')"><input type="radio" name="w_copy" value="All ready"><span class="radio-circle"></span><span class="radio-text">Yes, all text is ready</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_copy')"><input type="radio" name="w_copy" value="Partially"><span class="radio-circle"></span><span class="radio-text">Some ready, need help with rest</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_copy')"><input type="radio" name="w_copy" value="None"><span class="radio-circle"></span><span class="radio-text">No, I need help with all copy</span></label>
-            </div>
-            <div class="error-msg" id="err_copy">Please select a content option</div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Do you have images / photos? *</label>
-            <div class="radio-grid" id="w_images_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_images')"><input type="radio" name="w_images" value="Professional photos"><span class="radio-circle"></span><span class="radio-text">Yes, professional photos</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_images')"><input type="radio" name="w_images" value="Some photos"><span class="radio-circle"></span><span class="radio-text">Some, will need stock images</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_images')"><input type="radio" name="w_images" value="Need stock"><span class="radio-circle"></span><span class="radio-text">No, need all stock images</span></label>
-            </div>
-            <div class="error-msg" id="err_images">Please select an image option</div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Existing content to share (optional)</label>
-            <textarea class="form-input form-textarea" id="w_content_extra" placeholder="Links to your current website, social media, brochures, or any content you want us to use"></textarea>
-          </div>
-
-          <div class="wizard-btns">
-            <button type="button" class="wizard-btn-back" onclick="prevStep()">Back</button>
-            <button type="button" class="wizard-btn-next" onclick="nextStep()">Continue</button>
-          </div>
-        </div>
-
-        <!-- STEP 5: DOMAIN & TECHNICAL -->
-        <div class="wizard-step-content" id="step-5">
-          <div class="wizard-step-title">Domain &amp; Technical</div>
-          <div class="wizard-step-desc">A few final details to get started.</div>
-
-          <div class="form-group" style="margin-bottom:1.25rem">
-            <label class="form-label">Do you have a domain name? *</label>
-            <div class="radio-grid" id="w_hasdomain_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_hasdomain')"><input type="radio" name="w_hasdomain" value="Have domain"><span class="radio-circle"></span><span class="radio-text">Yes, I already own it</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_hasdomain')"><input type="radio" name="w_hasdomain" value="Need domain"><span class="radio-circle"></span><span class="radio-text">No, I need help buying one</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_hasdomain')"><input type="radio" name="w_hasdomain" value="Not sure domain"><span class="radio-circle"></span><span class="radio-text">Not sure yet</span></label>
-            </div>
-            <div class="error-msg" id="err_hasdomain">Please select a domain option</div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Desired domain name (if known)</label>
-            <input type="text" class="form-input" id="w_domain_name" placeholder="www.yourbusiness.ie">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Which package are you interested in? *</label>
-            <select class="form-input" id="w_package" style="cursor:pointer">
-              <option value="">Choose a package...</option>
-              <option value="Starter - EUR 499">Starter - &euro;499 (1 page)</option>
-              <option value="Business - EUR 999">Business - &euro;999 (up to 5 pages)</option>
-              <option value="Premium - EUR 1999">Premium - &euro;1,999 (up to 10 pages)</option>
-              <option value="Online Store - EUR 2999">Online Store - &euro;2,999 (e-commerce)</option>
-              <option value="Not sure yet">Not sure yet, need advice</option>
-            </select>
-            <div class="error-msg" id="err_package">Please select a package</div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Desired timeline *</label>
-            <div class="radio-grid" id="w_timeline_opts">
-              <label class="radio-card" onclick="selectRadio(this, 'w_timeline')"><input type="radio" name="w_timeline" value="ASAP"><span class="radio-circle"></span><span class="radio-text">ASAP</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_timeline')"><input type="radio" name="w_timeline" value="Within 2 weeks"><span class="radio-circle"></span><span class="radio-text">Within 2 weeks</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_timeline')"><input type="radio" name="w_timeline" value="Within 1 month"><span class="radio-circle"></span><span class="radio-text">Within 1 month</span></label>
-              <label class="radio-card" onclick="selectRadio(this, 'w_timeline')"><input type="radio" name="w_timeline" value="Flexible"><span class="radio-circle"></span><span class="radio-text">Flexible</span></label>
-            </div>
-            <div class="error-msg" id="err_timeline">Please select a timeline</div>
-          </div>
-
-          <div class="wizard-btns">
-            <button type="button" class="wizard-btn-back" onclick="prevStep()">Back</button>
-            <button type="button" class="wizard-btn-next" onclick="nextStep()">Continue</button>
-          </div>
-        </div>
-
-        <!-- STEP 6: REVIEW -->
-        <div class="wizard-step-content" id="step-6">
-          <div class="wizard-step-title">Review Your Brief</div>
-          <div class="wizard-step-desc">Check everything looks right before sending.</div>
-
-          <div class="review-list" id="reviewList"></div>
-
-          <div class="wizard-btns">
-            <button type="button" class="wizard-btn-back" onclick="prevStep()">Back</button>
-            <button type="button" class="wizard-btn-submit" id="submitBriefBtn" onclick="submitBrief()">Send Brief</button>
-          </div>
-        </div>
-
-      </form>
-
-      <!-- Success State -->
-      <div id="briefSuccess" class="success-state hidden">
-        <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <div class="success-title">Brief sent successfully!</div>
-        <p style="color:var(--slate-600);margin-bottom:1.5rem">We'll review your brief and email you within 24 hours to confirm next steps.</p>
-        <div style="background:var(--slate-50);border-radius:.75rem;padding:1.25rem;text-align:left;max-width:28rem;margin:0 auto 1.5rem">
-          <p style="font-weight:700;font-size:.875rem;margin-bottom:.75rem;color:var(--slate-900)">What happens next:</p>
-          <ol style="font-size:.875rem;color:var(--slate-600);padding-left:1.25rem;line-height:1.8">
-            <li>We review your brief (within 24h)</li>
-            <li>We email you with a confirmation and invoice for the 50% deposit</li>
-            <li>You pay the deposit and we start building</li>
-            <li>We send a private preview for your feedback</li>
-            <li>2 revision rounds included</li>
-            <li>Pay the balance and go live!</li>
-          </ol>
-        </div>
-        <button class="btn btn-outline" onclick="resetBrief()">Send another brief</button>
-        <button class="btn btn-primary" onclick="showHome()" style="margin-left:.5rem">Back to Website</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Payment Modal -->
 <div class="modal-overlay" id="payModal">
@@ -1390,18 +710,6 @@ h1 .highlight { color: var(--primary); }
 </div>
 
 <script>
-// ==================== PAGE NAVIGATION ====================
-function showPage(page) {
-  document.getElementById('mainSite').style.display = 'none';
-  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  window.scrollTo(0, 0);
-}
-function showHome() {
-  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-  document.getElementById('mainSite').style.display = 'block';
-  window.scrollTo(0, 0);
-}
 
 // ==================== STRIPE PAYMENT LINKS ====================
 const STRIPE_PAYMENT_LINKS = {
@@ -1733,6 +1041,8 @@ function resetBrief(){
 
 // ==================== YEAR ====================
 document.getElementById('year').textContent = new Date().getFullYear();
+
 </script>
+
 </body>
 </html>
