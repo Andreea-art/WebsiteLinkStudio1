@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — WebsiteLink Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8Z"/><path d="m3.3 7 8.7 5 8.7-5"/></svg>
+      <span>WebsiteLink</span><span>Studio</span>
+    </a>
+    <div class="nav-links">
+      <a href="how.html">How It Works</a>
+      <a href="packages.html">Packages</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="packages.html" class="btn btn-primary">See Pricing</a>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="how.html" onclick="closeMobileMenu()">How It Works</a>
+  <a href="packages.html" onclick="closeMobileMenu()">Packages</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="projects.html" onclick="closeMobileMenu()">Projects</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2>Got questions? We're here.</h2>
+      <p class="section-desc">Not sure which package fits? Send us a message and we'll reply within 24 hours.</p>
+    </div>
+    <div class="contact-card">
+      <form id="contactForm" onsubmit="event.preventDefault(); sendMessage();">
+        <div class="form-group"><label class="form-label">Your name</label><input type="text" class="form-input" id="contactName" placeholder="John Smith" required></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="contactEmail" placeholder="john@company.ie" required></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-input form-textarea" id="contactMessage" placeholder="Hi, I have a question about..." required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+        <div class="form-footer">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your data is safe. We don't share or spam.</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Or email us at <a href="mailto:contact@websitelinkstudio.ie" style="color:var(--primary)">contact@websitelinkstudio.ie</a></span>
+        </div>
+      </form>
+      <div id="contactSuccess" class="success-state hidden">
+        <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Message sent! We'll reply within 24h.</div>
+        <button class="btn btn-outline" onclick="resetForm()">Send another message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section text-center">
+  <div class="container">
+    <h2 style="font-size:2.25rem">Ready to get your site <span class="highlight">in 24h?</span></h2>
+    <p class="subtitle">Stop delaying. Every day without a professional website is a day you're losing customers.</p>
+    <a href="packages.html" class="btn btn-primary btn-lg" style="font-size:1.125rem;padding:.875rem 2.5rem;height:auto">Choose Your Package Now</a>
+    <p style="color:#94a3b8;font-size:.875rem;margin-top:1rem">50% now &bull; 50% after preview approval &bull; Private preview &bull; 2 revision rounds</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div style="display:flex;align-items:center;gap:.5rem;font-weight:700">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8Z"/></svg>
+      <span>WebsiteLink</span><span style="color:var(--primary)">Studio</span>
+    </div>
+    <div class="footer-copy">&copy; <span id="year"></span> WebsiteLink Studio. All rights reserved.</div>
+    <div class="footer-links">
+      <a onclick="showPage('terms')">Terms &amp; Conditions</a>
+      <a onclick="showPage('refunds')">Refund Policy</a>
+      <a href="contact.html" onclick="window.location.href='index.html'; window.location.hash='contact';">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="payModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Complete Your Order</div>
+      <button class="modal-close" onclick="closePayModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="pay-error" id="payError">
+        <div style="display:flex;gap:.75rem;align-items:flex-start">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" width="20" height="20" style="flex-shrink:0;margin-top:.125rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>
+            <p style="font-weight:600;color:#991b1b;font-size:.875rem;margin-bottom:.25rem">Payment link not configured</p>
+            <p style="font-size:.875rem;color:#b91c1c;line-height:1.5">Please contact us at <a href="mailto:contact@websitelinkstudio.ie" style="color:#991b1b;text-decoration:underline;font-weight:600">contact@websitelinkstudio.ie</a> to complete your order.</p>
+          </div>
+        </div>
+
+<script>
+
+// ==================== PAGE NAVIGATION ====================
+function showPage(page) {
+  document.getElementById('mainSite').style.display = 'none';
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo(0, 0);
+}
+function showHome() {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('mainSite').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+// ==================== STRIPE PAYMENT LINKS ====================
+const STRIPE_PAYMENT_LINKS = {
+  starter:    "https://buy.stripe.com/eVq5kC5Sce0eeqV3WG4c800",
+  business:   "https://buy.stripe.com/14AdR81BW3lAaaF0Ku4c801",
+  premium:    "https://buy.stripe.com/aFabJ03K49JY0A5eBk4c802",
+  ecommerce:  "https://buy.stripe.com/cNi9AS0xSe0eaaF0Ku4c803"
+};
+const PAYPAL_LINKS = {
+  starter:    "https://paypal.me/YOUR_PAYPAL/250",
+  business:   "https://paypal.me/YOUR_PAYPAL/500",
+  premium:    "https://paypal.me/YOUR_PAYPAL/1000",
+  ecommerce:  "https://paypal.me/YOUR_PAYPAL/1500"
+};
+
+// ==================== MOBILE MENU ====================
+function toggleMobileMenu(){
+  document.getElementById('mobileNav').classList.toggle('show');
+}
+function closeMobileMenu(){
+  document.getElementById('mobileNav').classList.remove('show');
+}
+
+// ==================== PACKAGE SELECTION ====================
+let selectedPackage = null;
+const prices = { starter: 499, business: 999, premium: 1999, ecommerce: 2999 };
+const names  = { starter: 'Starter', business: 'Business', premium: 'Premium', ecommerce: 'Online Store' };
+
+function selectPackage(id){
+  selectedPackage = id;
+  document.querySelectorAll('.package-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('card-' + id).classList.add('selected');
+}
+
+// ==================== PAYMENT MODAL ====================
+let selectedPayMethod = 'stripe';
+
+function openPayModal(pkg){
+  selectedPackage = pkg;
+  const price = prices[pkg];
+  const deposit = Math.ceil(price / 2);
+  const balance = price - deposit;
+
+  document.getElementById('modalPrice').textContent = '\u20AC' + price;
+  document.getElementById('modalDesc').textContent = names[pkg] + ' Package - 50% deposit';
+  document.getElementById('modalFullPrice').textContent = '\u20AC' + price;
+  document.getElementById('modalDeposit').textContent = '\u20AC' + deposit;
+  document.getElementById('modalBalance').textContent = '\u20AC' + balance;
+  document.getElementById('modalPayBtn').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Pay \u20AC' + deposit + ' Deposit';
+
+  document.getElementById('payError').classList.remove('show');
+  document.getElementById('modalPayBtn').style.opacity = '1';
+  document.getElementById('modalPayBtn').style.pointerEvents = 'auto';
+
+  document.getElementById('payModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePayModal(){
+  document.getElementById('payModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function selectPayOption(el, method){
+  document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('active'));
+  el.classList.add('active');
+  selectedPayMethod = method;
+}
+
+function processPayment(){
+  const pkg = selectedPackage;
+  if (!pkg) return false;
+
+  const links = selectedPayMethod === 'stripe' ? STRIPE_PAYMENT_LINKS : PAYPAL_LINKS;
+  const url = links[pkg];
+
+  if (!url || url.includes('YOUR_') || url === 'YOUR_LINK_HERE') {
+    document.getElementById('payError').classList.add('show');
+    document.getElementById('modalPayBtn').style.opacity = '0.5';
+    document.getElementById('modalPayBtn').style.pointerEvents = 'none';
+    return false;
+  }
+
+  const btn = document.getElementById('modalPayBtn');
+  btn.href = url;
+
+  setTimeout(closePayModal, 100);
+  return true;
+}
+
+// Close modal on overlay click
+document.getElementById('payModal').addEventListener('click', function(e){
+  if (e.target === this) closePayModal();
+});
+
+// Escape key to close modal
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closePayModal();
+});
+
+// ==================== FAQ ====================
+function toggleFaq(btn){
+  const ans = btn.nextElementSibling;
+  const open = ans.classList.contains('show');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+  document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+  if (!open) { ans.classList.add('show'); btn.classList.add('active'); }
+}
+
+// ==================== CONTACT FORM (Formspree - FormData) ====================
+const FORMSPREE_CONTACT_ID = 'xeenjwyg';
+const FORMSPREE_BRIEF_ID = 'xkoywadq';
+
+function sendMessage(){
+  const n = document.getElementById('contactName').value.trim();
+  const e = document.getElementById('contactEmail').value.trim();
+  const m = document.getElementById('contactMessage').value.trim();
+  if (!n || !e || !m) { alert('Please fill all fields'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email'); return; }
+
+  var fd = new FormData();
+  fd.append('name', n);
+  fd.append('email', e);
+  fd.append('message', m);
+  fd.append('_subject', 'New message from WebsiteLink Studio contact form');
+  fd.append('_replyto', e);
+
+  fetch('https://formspree.io/f/' + FORMSPREE_CONTACT_ID, {
+    method: 'POST',
+    body: fd,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r) {
+    if (r.ok) {
+      document.getElementById('contactForm').classList.add('hidden');
+      document.getElementById('contactSuccess').classList.remove('hidden');
+    } else {
+      alert('Something went wrong. Please email us directly at contact@websitelinkstudio.ie');
+    }
+  }).catch(function() {
+    alert('Something went wrong. Please email us directly at contact@websitelinkstudio.ie');
+  });
+}
+
+function resetForm(){
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactEmail').value = '';
+  document.getElementById('contactMessage').value = '';
+  document.getElementById('contactForm').classList.remove('hidden');
+  document.getElementById('contactSuccess').classList.add('hidden');
+}
+
+// ==================== 6-STEP BRIEF WIZARD ====================
+let wizardStep = 1;
+const totalSteps = 6;
+
+function updateWizardUI(){
+  document.querySelectorAll('.wizard-step').forEach(function(el) {
+    var s = parseInt(el.dataset.step);
+    el.classList.remove('active', 'completed');
+    if (s < wizardStep) el.classList.add('completed');
+    if (s === wizardStep) el.classList.add('active');
+  });
+  var pct = ((wizardStep - 1) / (totalSteps - 1)) * 100;
+  document.getElementById('progressLine').style.width = pct + '%';
+  document.querySelectorAll('.wizard-step-content').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('step-' + wizardStep).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextStep(){
+  if (!validateStep(wizardStep)) return;
+  if (wizardStep < totalSteps) {
+    wizardStep++;
+    updateWizardUI();
+    if (wizardStep === 6) buildReview();
+  }
+}
+
+function prevStep(){
+  if (wizardStep > 1) { wizardStep--; updateWizardUI(); }
+}
+
+function goToStep(n){
+  wizardStep = n;
+  updateWizardUI();
+}
+
+function selectRadio(card, name){
+  document.querySelectorAll('input[name="' + name + '"]').forEach(function(inp) {
+    inp.closest('.radio-card').classList.remove('selected');
+  });
+  card.classList.add('selected');
+  card.querySelector('input').checked = true;
+}
+
+function toggleCheckbox(card){
+  var cb = card.querySelector('input');
+  cb.checked = !cb.checked;
+  card.classList.toggle('selected', cb.checked);
+}
+
+function showFieldError(id, show){
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('show', show);
+  var inputId = id.replace('err_', 'w_');
+  var input = document.getElementById(inputId);
+  if (input) input.classList.toggle('field-error', show);
+}
+
+function validateStep(step){
+  var valid = true;
+  document.querySelectorAll('.error-msg').forEach(function(e) { e.classList.remove('show'); });
+  document.querySelectorAll('.field-error').forEach(function(e) { e.classList.remove('field-error'); });
+
+  if (step === 1) {
+    var name = document.getElementById('w_name').value.trim();
+    var email = document.getElementById('w_email').value.trim();
+    var about = document.getElementById('w_about').value.trim();
+    if (!name) { showFieldError('err_name', true); valid = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFieldError('err_email', true); valid = false; }
+    if (!about) { showFieldError('err_about', true); valid = false; }
+  }
+  if (step === 2) {
+    if (!document.querySelector('input[name="w_goal"]:checked')) { showFieldError('err_goal', true); valid = false; }
+  }
+  if (step === 3) {
+    if (!document.querySelector('input[name="w_logo"]:checked')) { showFieldError('err_logo', true); valid = false; }
+    if (!document.querySelector('input[name="w_style"]:checked')) { showFieldError('err_style', true); valid = false; }
+  }
+  if (step === 4) {
+    if (!document.querySelector('input[name="w_copy"]:checked')) { showFieldError('err_copy', true); valid = false; }
+    if (!document.querySelector('input[name="w_images"]:checked')) { showFieldError('err_images', true); valid = false; }
+  }
+  if (step === 5) {
+    if (!document.querySelector('input[name="w_hasdomain"]:checked')) { showFieldError('err_hasdomain', true); valid = false; }
+    var pkg = document.getElementById('w_package').value;
+    if (!pkg) { showFieldError('err_package', true); document.getElementById('w_package').classList.add('field-error'); valid = false; }
+    if (!document.querySelector('input[name="w_timeline"]:checked')) { showFieldError('err_timeline', true); valid = false; }
+  }
+  return valid;
+}
+
+function getCheckedValues(name){
+  return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function(cb) { return cb.value; }).join(', ') || 'Not specified';
+}
+
+function getRadioValue(name){
+  var el = document.querySelector('input[name="' + name + '"]:checked');
+  return el ? el.value : 'Not specified';
+}
+
+function buildReview(){
+  var data = [
+    { title: 'Contact Information', step: 1, content: '<strong>Name:</strong> ' + document.getElementById('w_name').value + '<br><strong>Email:</strong> ' + document.getElementById('w_email').value + '<br><strong>Phone:</strong> ' + (document.getElementById('w_phone').value || 'N/A') + '<br><strong>Company:</strong> ' + (document.getElementById('w_company').value || 'N/A') + '<br><strong>Industry:</strong> ' + (document.getElementById('w_industry').value || 'N/A') },
+    { title: 'About Business', step: 1, content: document.getElementById('w_about').value.replace(/\n/g, '<br>') },
+    { title: 'Primary Goal', step: 2, content: getRadioValue('w_goal') },
+    { title: 'Pages Needed', step: 2, content: getCheckedValues('w_pages') },
+    { title: 'Features Needed', step: 2, content: getCheckedValues('w_features') },
+    { title: 'Logo', step: 3, content: getRadioValue('w_logo') },
+    { title: 'Brand Colours', step: 3, content: document.getElementById('w_colours').value || 'Not specified' },
+    { title: 'Design Style', step: 3, content: getRadioValue('w_style') },
+    { title: 'Reference Websites', step: 3, content: document.getElementById('w_references').value ? document.getElementById('w_references').value.replace(/\n/g, '<br>') : '<span class="review-empty">Not provided</span>' },
+    { title: 'Text Copy', step: 4, content: getRadioValue('w_copy') },
+    { title: 'Images', step: 4, content: getRadioValue('w_images') },
+    { title: 'Existing Content', step: 4, content: document.getElementById('w_content_extra').value ? document.getElementById('w_content_extra').value.replace(/\n/g, '<br>') : '<span class="review-empty">Not provided</span>' },
+    { title: 'Domain Status', step: 5, content: getRadioValue('w_hasdomain') },
+    { title: 'Desired Domain', step: 5, content: document.getElementById('w_domain_name').value || 'Not specified' },
+    { title: 'Package', step: 5, content: document.getElementById('w_package').value },
+    { title: 'Timeline', step: 5, content: getRadioValue('w_timeline') }
+  ];
+
+  document.getElementById('reviewList').innerHTML = data.map(function(item) {
+    return '<div class="review-item"><div class="review-item-header"><span class="review-item-title">' + item.title + '</span><span class="review-item-step">Step ' + item.step + ' <span class="review-item-edit" onclick="goToStep(' + item.step + ')">Edit</span></span></div><div class="review-item-content">' + item.content + '</div></div>';
+  }).join('');
+}
+
+function submitBrief(){
+  var btn = document.getElementById('submitBriefBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  var message = 'NEW PROJECT BRIEF - WebsiteLink Studio\n\n=== STEP 1: BUSINESS INFO ===\nName: ' + document.getElementById('w_name').value + '\nEmail: ' + document.getElementById('w_email').value + '\nPhone: ' + (document.getElementById('w_phone').value || 'N/A') + '\nCompany: ' + (document.getElementById('w_company').value || 'N/A') + '\nIndustry: ' + (document.getElementById('w_industry').value || 'N/A') + '\n\nAbout Business:\n' + document.getElementById('w_about').value + '\n\n=== STEP 2: WEBSITE GOALS ===\nPrimary Goal: ' + getRadioValue('w_goal') + '\nPages Needed: ' + getCheckedValues('w_pages') + '\nFeatures: ' + getCheckedValues('w_features') + '\n\n=== STEP 3: DESIGN & BRANDING ===\nLogo: ' + getRadioValue('w_logo') + '\nBrand Colours: ' + (document.getElementById('w_colours').value || 'N/A') + '\nDesign Style: ' + getRadioValue('w_style') + '\nReference Websites: ' + (document.getElementById('w_references').value || 'N/A') + '\n\n=== STEP 4: CONTENT ===\nText Copy: ' + getRadioValue('w_copy') + '\nImages: ' + getRadioValue('w_images') + '\nExisting Content: ' + (document.getElementById('w_content_extra').value || 'N/A') + '\n\n=== STEP 5: DOMAIN & TECHNICAL ===\nDomain Status: ' + getRadioValue('w_hasdomain') + '\nDesired Domain: ' + (document.getElementById('w_domain_name').value || 'N/A') + '\nPackage: ' + document.getElementById('w_package').value + '\nTimeline: ' + getRadioValue('w_timeline') + '\n';
+
+  var fd = new FormData();
+  fd.append('name', document.getElementById('w_name').value);
+  fd.append('email', document.getElementById('w_email').value);
+  fd.append('message', message);
+  fd.append('_subject', 'New Project Brief - ' + document.getElementById('w_package').value);
+  fd.append('_replyto', document.getElementById('w_email').value);
+
+  fetch('https://formspree.io/f/' + FORMSPREE_BRIEF_ID, {
+    method: 'POST',
+    body: fd,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r) {
+    btn.textContent = 'Send Brief';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    if (r.ok) {
+      document.getElementById('briefForm').classList.add('hidden');
+      document.getElementById('briefSuccess').classList.remove('hidden');
+      document.getElementById('wizardProgress').style.display = 'none';
+    } else {
+      alert('Something went wrong. Please email us directly at contact@websitelinkstudio.ie');
+    }
+  }).catch(function() {
+    btn.textContent = 'Send Brief';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    alert('Something went wrong. Please email us directly at contact@websitelinkstudio.ie');
+  });
+}
+
+function resetBrief(){
+  wizardStep = 1;
+  document.getElementById('briefForm').reset();
+  document.querySelectorAll('.radio-card').forEach(function(c) { c.classList.remove('selected'); });
+  document.querySelectorAll('.checkbox-card').forEach(function(c) { c.classList.remove('selected'); });
+  document.querySelectorAll('.error-msg').forEach(function(e) { e.classList.remove('show'); });
+  document.querySelectorAll('.field-error').forEach(function(e) { e.classList.remove('field-error'); });
+  document.getElementById('briefForm').classList.remove('hidden');
+  document.getElementById('briefSuccess').classList.add('hidden');
+  document.getElementById('wizardProgress').style.display = '';
+  document.getElementById('progressLine').style.width = '0%';
+  updateWizardUI();
+}
+
+// ==================== YEAR ====================
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
